@@ -81,7 +81,7 @@ Each component can be associated with only one entity.
 ### Implementation details
 I will start unwraping the implementation from the class that is used by the user most often, down to the classes implementing the real functionalities.
 
-###### CRegistry
+##### CRegistry
 Is a main coordinator between the user and the AGLECS. The registry is a global variable, that can be accessed from anywhere in the user's code. From the user's perspective the registry provides only three methods:
 - **create** - registers an entity
 - **destroy** - unregisters an entity
@@ -95,14 +95,14 @@ The registry is a facade build atop of two classes:
 
 Therefore the CRegistry class is just a supervisor and coordinator of actions taken on entities and components.
 
-###### IEntity
+##### IEntity
 Is a class representing the entity. Besides the attach, detach and get methods, it also provides two important features:
 - The entity's unique identifier
 - The signature of associated components
 
 When calling for attach, detach and get methods, the entity delegates these operations and calls 'registry' object coordinator to apply them.
 
-###### TComponentArray
+##### TComponentArray
 This is the place in which the components are stored and it's relation with the entity is established. The relation is implemented such way, that the entity's unique identifier is used as an index to a component.
 Component arrays are inheriting from **IComponentArray** which is an abstract, polymorphic base to store the arrays in supervising object (**IRegistryComponent**).
 
