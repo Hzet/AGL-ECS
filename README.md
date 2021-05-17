@@ -64,9 +64,9 @@ To compare two signatures the system has to iterate through every  bit of the si
 Unfortunately the space complexity is not as nice as time complexity. Each component array that has been used at least once creates an array of 'AGL_MAX_ENTITIES' elements, which can be enormously huge when the component has relatively big size.
 
 ### Numeric values
-| Entities count / component count | Create | Attach with value | Attach default initialized | Attach default initialized (bulk) | Detach | Detach (bulk) | Get and iterate through the view |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| 1.000.000 / 3 | 15.2ms | 63.7ms | 20.1ms | 16.6ms | 11.6ms | 10.8ms |  2.5ms |
+|  Entities count / component count  | Create  | Attach with value  | Attach default initialized  | Attach default initialized (bulk)  | Detach  | Detach (bulk)  | Get and iterate through the view  |
+| :------------: | :------------: | :------------: | :------------: | :------------: | :------------: | :------------: | :------------: |
+|  1.000.000 / 3 | 15.2ms  | 63.7ms  | 20.1ms  | 16.6ms  | 11.6ms  | 10.8ms  | 2.5ms  |
 
 Test machine: 8GB, i5 4590
 
